@@ -1,0 +1,10 @@
+# Ignore all executable files
+*.exe
+
+# Ignore Visual Studio and VS Code specific files
+.vs/
+.vscode/
+
+# Ignore specific source files
+Bankingsystm.cpp
+Practice.cpp

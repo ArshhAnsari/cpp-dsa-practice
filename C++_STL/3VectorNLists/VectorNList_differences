@@ -1,0 +1,69 @@
+~ ~ ~ ~ ~ Vector: ~ ~ ~ ~ ~
+
+- Underlying Structure:
+    std::vector is implemented as a dynamic array. 
+    It is  a contiguous block of memory, meaning all elements  are stored next to each other in memory.
+
+- Memory Management:
+    When a std::vector runs out of capacity, it allocates a larger block of memory (usually double the current size),
+    copies the existing elements to  the new block, and then deallocates the old memory.
+    This is why std::vector can efficiently handle growing data, but it may involve costly memory
+    reallocations when the size exceeds the current  capacity.
+
+- Access Speed:
+    Provides O(1) time complexity for random access.
+    You can access any element directly using the subscript operator [] or at().
+
+- Insertion/Deletion Speed:
+    Inserting or deleting elements at the end is generally efficient (O(1) amortized time).
+    However, inserting or deleting elements in the middle or at the beginning requires shifting all subsequent elements, which is O(n) in time      
+    complexity.
+
+- Use Case:
+    Best for scenarios where you need fast random access and where the size of the array changes infrequently or primarily at the end.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+~ ~ ~ ~ ~ List: ~ ~ ~ ~ ~
+
+- Underlying Structure:
+    std::list is implemented as a doubly linked list.
+    Each element (or node) in a std::list contains a value and two pointers: one pointing to the next element and one to the previous element.
+
+- Memory Management:
+    Each element is allocated individually and linked to its neighbors via pointers.
+    This structure means that std::list incurs a memory overhead due to the storage of pointers in each node.
+
+- Access Speed:
+    Does not support random access. Accessing an element requires traversing the list from the beginning or end,
+    making it O(n) for access by index.
+
+- Insertion/Deletion Speed:
+    Inserting or deleting elements is efficient (O(1)) if you already have an iterator pointing to the insertion/deletion point, as it only
+    involves adjusting pointers.
+    However, locating the insertion/deletion point is O(n).
+
+- Use Case:
+    Best for scenarios where you need frequent insertions and deletions in the middle of the sequence, but do not require fast random access.
+
+~ ~ ~ Summary of Differences: ~ ~ ~
+
+- Structure:
+    std::vector is a dynamic array (contiguous memory).
+    std::list is a doubly linked list (non-contiguous memory with pointers to next and previous nodes).
+
+- Memory Usage:
+    std::vector has lower overhead but may require reallocations.
+    std::list has higher memory overhead due to storing pointers but does not require reallocations.
+
+- Access:
+    std::vector allows fast random access (O(1)).
+    std::list does not support random access, and element access is O(n).
+
+- Insertion/Deletion:
+    std::vector is efficient for insertions/deletions at the end.
+    std::list is efficient for insertions/deletions anywhere, provided you have the appropriate iterator.
+
+- Conclusion:
+    Use std::vector when you need fast access by index and the container will be modified primarily at the end.
+    Use std::list when you need efficient insertions and deletions throughout the sequence and do not need random access.
