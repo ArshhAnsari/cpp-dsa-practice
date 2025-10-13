@@ -15,6 +15,13 @@ Descending Right Triangle:
 **
 *
 
+Pattern for printing 0 and 1:
+// 1
+// 01
+// 101
+// 0101
+// 10101
+
 */
 
 void ascendingtri(int n){
