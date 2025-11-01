@@ -69,3 +69,33 @@ int main(){
 }
 */
 
+/* **********check the given number is a palindrome********** */
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout<<"Enter the number:";
+    cin>>num;
+    int revnum = 0;
+    int originalNum = num;
+
+        for (int j = num; j > 0;j/=10)
+        {
+            revnum = revnum * 10 + (j % 10);
+
+        }
+        if (revnum == originalNum)
+        {
+            cout << originalNum << " is a palindrome" << endl;
+        } else {
+            cout << originalNum << " is not a palindrome" << endl;
+        }
+
+    return 0;
+}
+
+
