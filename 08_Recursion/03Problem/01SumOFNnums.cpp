@@ -15,6 +15,19 @@ int directFormulaSum(int n) {
     return n * (n + 1) / 2;
 }
 
+// Recursive function to calculate the sum of even natural numbers up to n
+int sumofEvenNumbers(int n){
+    if(n>0){
+        
+        if(n%2 == 0){
+            return sumofEvenNumbers(n - 2) + n;
+        }
+        else
+            return sumofEvenNumbers(n - 1);
+        }
+        return 0;
+}
+
 int main() {
     // Input: Get the number up to which the sum is needed
     int num;
@@ -29,5 +42,8 @@ int main() {
     int directFormulaSumResult = directFormulaSum(num);
     cout << "Sum using direct formula: " << directFormulaSumResult << endl;
 
+    cout << "Sum of the Natural Even Numbers" << endl;
+    int evenSumResult = sumofEvenNumbers(num);
+    cout << "Sum up to " << num << " is " << evenSumResult << endl;
     return 0;
 }
