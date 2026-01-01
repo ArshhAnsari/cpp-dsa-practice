@@ -5,6 +5,8 @@ using namespace std;
 
 int main() {
     // Basic pair with two integers
+    // pair<int, int> basicPair ;
+    // basicPair = make_pair(1, 2);
     pair<int, int> integerPair = {1, 2};
     cout << "Integer Pair: " << integerPair.first << " " << integerPair.second << endl;
 

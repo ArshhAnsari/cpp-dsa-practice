@@ -2,6 +2,21 @@
 #include <vector>
 using namespace std;
 
+void printPair(vector<pair<int, int>> p){
+    for (int i = 0; i < p.size(); i++)
+    {
+        cout << "Pair elements: " << p[i].first << " " << p[i].second << endl;
+    }
+}
+
+void printVec(vector<int> &p){
+    for (int i = 0; i < p.size(); i++)
+    {
+        cout << p[i] << " ";
+    }
+    cout << "\n";
+}
+
 int main() {
     // Creating a vector and adding elements
     vector<int> vec;
@@ -58,5 +73,40 @@ int main() {
     // Displaying wheter the vector is empty or not
     cout << "Is the Vector 'vec2' empty!: " << (vec2.empty() ? "Yes" : "No") << endl;
 
-    return 0;
+    // Vector of Pairs
+    vector<pair<int, int>> varpair;
+    int nElements;
+    cout << "Enter number of elements: ";
+    cin >> nElements;
+    for (int i = 0; i < nElements; ++i){
+        int x, y;
+        cin >> x >> y;
+        varpair.push_back({x, y});
+    }
+    printPair(varpair);
+
+    // Vector of Arrays
+    int N = 3;
+    vector<int> vecArray[N];
+    for (int i = 0; i < N; i++)
+    {
+        int nVec;
+        cout << "Enter the vectorSize at " << i << " index:";
+        cin >> nVec;
+        for (int j = 0; j < nVec; j++)
+        {
+            int elements;
+            cout << "Enter element: ";
+            cin >> elements;
+            vecArray[i].push_back(elements);
+        }
+        
+    }
+    for (int i = 0; i < N; i++)
+    {
+        cout << "Elements at index " << i << " are:";
+        printVec(vecArray[i]);
+    }
+
+        return 0;
 }
